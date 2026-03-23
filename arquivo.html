@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cassino VIP | Nova Versão</title>
+    <style>
+        :root {
+            --bg-dark: #0d102b;
+            --bg-paper: #070b22;
+            --primary: #4dd8fe;
+            --text-main: #ffffff;
+            --text-secondary: #9492C7;
+            --accent: #06E385;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'Averta', sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Header Centralizado */
+        header {
+            background: var(--bg-paper);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(77, 216, 254, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-weight: bold;
+            color: var(--primary);
+            font-size: 1.5rem;
+            text-transform: uppercase;
+        }
+
+        /* Grid de Jogos Centralizada */
+        .game-container {
+            padding: 20px;
+            display: grid;
+            /* Centraliza os itens na tela */
+            justify-content: center; 
+            margin: 0 auto;
+            max-width: 1200px;
+            gap: 15px;
+            /* Ajuste responsivo de colunas */
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (min-width: 600px) {
+            .game-container { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        @media (min-width: 900px) {
+            .game-container { grid-template-columns: repeat(5, 1fr); }
+        }
+
+        .game-card {
+            background: var(--bg-paper);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid transparent;
+            transition: transform 0.3s, border 0.3s;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .game-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 0 15px rgba(77, 216, 254, 0.3);
+        }
+
+        .badge-new {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            background: var(--accent);
+            color: #000;
+            font-size: 0.65rem;
+            font-weight: 900;
+            padding: 2px 8px;
+            border-radius: 4px;
+            z-index: 2;
+        }
+
+        .game-card img {
+            width: 100%;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            display: block;
+        }
+
+        .game-info {
+            padding: 10px;
+            text-align: center;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .btn-play {
+            background: var(--primary);
+            color: #000;
+            border: none;
+            padding: 12px;
+            width: 100%;
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: opacity 0.2s;
+        }
+
+        .btn-play:hover {
+            opacity: 0.9;
+        }
+
+        /* FAQ */
+        .faq-section {
+            padding: 40px 20px;
+            background: var(--bg-paper);
+            margin-top: auto;
+            text-align: center;
+        }
+
+        .faq-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(148, 146, 199, 0.1);
+            padding-bottom: 15px;
+        }
+
+        .faq-question {
+            color: var(--primary);
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .faq-answer {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">ICE CLONE</div>
+    <div class="balance">R$ 0,00</div>
+</header>
+
+<main class="game-container">
+    <div class="game-card">
+        <div class="badge-new">POPULAR</div>
+        <img src="https://imgix.ice.bet.br/games/300x300/spribe/aviator.webp" alt="Aviator">
+        <div class="game-info">Aviator</div>
+        <button class="btn-play">Jogar</button>
+    </div>
+
+    <div class="game-card">
+        <img src="https://imgix.ice.bet.br/games/300x300/popok/7fly.webp" alt="7 Fly">
+        <div class="game-info">7 Fly</div>
+        <button class="btn-play">Jogar</button>
+    </div>
+
+    <div class="game-card">
+        <img src="https://imgix.ice.bet.br/games/300x300/pgsoft/fortunetiger.webp" alt="Fortune Tiger">
+        <div class="game-info">Fortune Tiger</div>
+        <button class="btn-play">Jogar</button>
+    </div>
+
+    <div class="game-card">
+        <img src="https://imgix.ice.bet.br/games/300x300/pgsoft/fortunerabbit.webp" alt="Fortune Rabbit">
+        <div class="game-info">Fortune Rabbit</div>
+        <button class="btn-play">Jogar</button>
+    </div>
+
+    <div class="game-card">
+        <img src="https://imgix.ice.bet.br/games/300x300/pgsoft/fortunedragon.webp" alt="Fortune Dragon">
+        <div class="game-info">Fortune Dragon</div>
+        <button class="btn-play">Jogar</button>
+    </div>
+
+    <div class="game-card">
+        <img src="https://imgix.ice.bet.br/games/300x300/pgsoft/fortunesnake.webp" alt="Fortune Snake">
+        <div class="game-info">Fortune Snake</div>
+        <button class="btn-play">Jogar</button>
+    </div>
+
+    <div class="game-card">
+        <img src="https://imgix.ice.bet.br/games/300x300/popok/7gamesvegas.webp" alt="Vegas Slots">
+        <div class="game-info">7 Games Vegas</div>
+        <button class="btn-play">Jogar</button>
+    </div>
+
+    <div class="game-card">
+        <img src="https://imgix.ice.bet.br/games/300x300/popok/corridamaluca.webp" alt="Corrida Maluca">
+        <div class="game-info">Corrida Maluca</div>
+        <button class="btn-play">Jogar</button>
+    </div>
+
+    <div class="game-card">
+        <img src="https://imgix.ice.bet.br/games/300x300/popok/moonlightangel.webp" alt="Moonlight Angel">
+        <div class="game-info">Moonlight Angel</div>
+        <button class="btn-play">Jogar</button>
+    </div>
+
+    <div class="game-card">
+        <img src="https://imgix.ice.bet.br/games/300x300/popok/cavalodefogofortune.webp" alt="Cavalo de Fogo">
+        <div class="game-info">Cavalo de Fogo</div>
+        <button class="btn-play">Jogar</button>
+    </div>
+
+    <div class="game-card">
+        <img src="https://imgix.ice.bet.br/games/300x300/pgsoft/fortunesnake.webp" alt="Mines">
+        <div class="game-info">Mines 3.0</div>
+        <button class="btn-play">Jogar</button>
+    </div>
+</main>
+
+<section class="faq-section">
+    <div class="faq-content">
+        <h3>Dúvidas Frequentes</h3>
+        <div class="faq-item">
+            <div class="faq-question">Como sacar meus ganhos?</div>
+            <div class="faq-answer">O saque é instantâneo via PIX diretamente na sua conta cadastrada.</div>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
